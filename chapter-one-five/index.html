@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>第一章课后题</title>
+
+<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="materialContainer">
+	<div class="box">
+		<div class="title">计算存储容量的需求</div>
+		<div class="input">
+			<label for="year">输入年份</label>
+			<input type="text" name="year" id="year">
+			<span class="spin"></span>
+		</div>
+		<!--<div class="input">-->
+			<!--<label for="pass">计算结果</label>-->
+			<!--<input type="password" name="pass" id="pass">-->
+			<!--<span class="spin"></span>-->
+		<!--</div>-->
+		<div class="button login">
+			<button onclick="result()">
+				<span>=</span>
+				<input type="text" id="result">
+				<!--<i class="fa fa-check"></i>-->
+			</button>
+		</div>
+		<a href="p.html" class="pass-forgot">计算价格</a>
+		<a href="chengben-w.html" class="pass-forgot">计算成本</a>
+	</div>
+</div>
+<script>
+	function result() {
+        var Y = document.getElementById("year").value;
+        var M = 4080*Math.exp(0.28*(Y-1960));
+        document.getElementById("result").value = M+"个字节";
+        // console.log(M);
+    }
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
