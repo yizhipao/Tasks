@@ -123,8 +123,7 @@ overwrite:使用了这个参数，每次打包就不用把原来exe删除，可�
 	先输入npm cache clean --force命令清除npm缓存 
 	输入npm install重装npm
  
-
- 	npm run-script packager打包文件
+`npm run-script packager打包文件`
 
 ## 运行环境
 ## 功能描述
