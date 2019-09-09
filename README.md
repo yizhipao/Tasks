@@ -4,7 +4,7 @@
 #### 安装
 在写好的node.js文件夹下安装electron
 官方文档：https://electronjs.org/docs/tutorial/installation
-通过命令行安装
+- 通过命令行安装
 npm install electron --save-dev
 一般来说官网下载较慢，可以使用淘宝镜像下载
 npm install -g cnpm --registry=https://registry.npm.taobao.org
