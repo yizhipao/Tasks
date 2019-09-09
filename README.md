@@ -242,6 +242,24 @@ overwrite:使用了这个参数，每次打包就不用把原来exe删除，可�
 - npm run-script packager打包文件
 
 ## 运行环境
+windows
 
 ## 功能描述
+点击index.html进入首页
+
 ## 源代码文件说明
+- css
+  + font-awesome-4.7.0
+  + style.css
+- images
+- js
+  + index.js
+  + jquery.min.js
+- cost.html
+- index.html
+- price.html
+- main.js
+- packade.json
+- package-lock.json
+
+
