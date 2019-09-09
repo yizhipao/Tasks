@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算成本</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="materialContainer">
+    <div class="box">
+        <div class="title">计算成本</div>
+        <div class="input">
+            <label for="year">输入年份</label>
+            <input type="text" name="name" id="year">
+        </div>
+        <div class="input">
+            <label for="a">输入日工作量</label>
+            <input type="text" name="pass" id="a">
+            <span class="spin"></span>
+        </div>
+        <div class="input">
+            <label for="b">输入月平均工资</label>
+            <input type="text" name="pass" id="b">
+            <span class="spin"></span>
+        </div>
+        <div class="button login">
+            <button onclick="result()">
+                <span>查看结果
+                </span>
+                <input type="text" id="result">
+            </button>
+        </div>
+        <a href="price.html" class="pass-forgot">计算价格</a>
+        <a href="index.html" class="pass-forgot">计算存储容量</a>
+    </div>
+</div>
+<script>
+    function result() {
+        var Y = document.getElementById("year").value;  //年份
+        var B = document.getElementById("b").value;  //月平均工资
+        var A = document.getElementById("a").value;  //日工作量
+        var M = 4080*Math.exp(0.28*(Y-1960));  //内存容量
+        var  X = M/(A*20);  //  (人/月)
+        console.log(X);
+        var W = X*B;
+        document.getElementById("result").value = W+"美元";
+        // console.log(M);
+    }
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
