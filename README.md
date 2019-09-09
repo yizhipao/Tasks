@@ -1,4 +1,5 @@
 ## 开发工具，语言
+### VS code、使用html、css、js编写代码
 ### 一、node.js安装配置
 #### 安装
 官网下载：https://nodejs.org/en/download/
