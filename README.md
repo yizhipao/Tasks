@@ -2,7 +2,8 @@
 ### 一、node.js安装配置
 1、读写文件
 
-`//使用require方法加载核心fs核心模块
+```
+//使用require方法加载核心fs核心模块
 var fs=require('fs')
 
 //读取文件
@@ -35,13 +36,15 @@ fs.writeFile('./demo.js' ,'大家好',function(error){
     else{
         console.log(‘运行成功’) //运行成功在控制台打印显示成功
     }
-})`
+})
+```
 
 2、简单的http服务
 node中专门提供了一个核心模块：http
 这个模块的职责就是编写服务器
 
-`//1、创建对象
+```
+//1、创建对象
 var http=require('http')
 
 // 2、使用http.createServer()方法创建一个web服务器
@@ -66,11 +69,13 @@ response.end()
 // 4、绑定端口号，启动服务器
  server.listen(234,function (request,response) {//端口号可以是1-65535的任意数字
     console.log('服务器启动成功，可以通过http://127.0.0.1:234/来访问')//或者http://localhost:234/
-   })`
+   })
+   ```
    
 3、根据不同请求路径返回不同数据
 
-`var http = require("http");
+```
+var http = require("http");
 //步骤：
 // 1、创建Server实例
 // 2、监听request请求事件，设置请求处理函数
@@ -93,12 +98,13 @@ server.on("request", function(req, res) {
   } else {
     res.end("404 not found");
   }
-});`
+});
 // 4、绑定端口号，启动服务器
-`server.listen(234, function(request, response) {
+server.listen(234, function(request, response) {
   //端口号可以是1-65535的任意数字
   console.log("服务器启动成功，可以通过http://127.0.0.1:234/来访问"); //或者http://localhost:234/
-});`
+});
+```
 
 ### 二、electron安装配置
 #### 安装
