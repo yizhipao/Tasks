@@ -78,7 +78,7 @@ public class j1_5 extends JFrame {
 		);
 		
 		JLayeredPane layeredPane = new JLayeredPane();
-		tabbedPane.addTab("第一（三）题", null, layeredPane, null);
+		tabbedPane.addTab("绗竴锛堜笁锛夐", null, layeredPane, null);
 		
 		JLabel label = new JLabel("\u5728");
 		label.setBounds(25, 16, 31, 18);
@@ -155,7 +155,7 @@ public class j1_5 extends JFrame {
 		layeredPane.add(label_2);
 		
 		JLayeredPane layeredPane_1 = new JLayeredPane();
-		tabbedPane.addTab("第二（三）题", null, layeredPane_1, null);
+		tabbedPane.addTab("绗簩锛堜笁锛夐", null, layeredPane_1, null);
 		
 		JLabel lblNewLabel_3 = new JLabel("\u5047\u8BBE\u5728");
 		lblNewLabel_3.setBounds(14, 13, 45, 18);
