@@ -1,5 +1,103 @@
 ## 开发工具，语言
 ### 一、node.js安装配置
+1、读写文件
+`//使用require方法加载核心fs核心模块
+var fs=require('fs')
+
+//读取文件
+//2、读取文件
+//第一个参数就是要读取的文件路径
+//第二个参数是一个回调函数
+//成功
+//data 数据
+// error null
+// 失败
+// data null
+// error 错误对象
+fs.readFile('./demo.js' ,function(error,data){
+   if(error){
+        console.log('运行失败') 
+    }
+    else{
+        console.log(data.toString()) //运行成功在控制台打印文件内容
+    }
+})
+
+//写入文件
+//第一个参数就是要写入的文件路径
+//第二个参数是文件内容
+//第三个参数是一个回调函数
+fs.writeFile('./demo.js' ,'大家好',function(error){
+    if(error){
+        console.log('运行失败') 
+    }
+    else{
+        console.log(‘运行成功’) //运行成功在控制台打印显示成功
+    }
+})`
+
+2、简单的http服务
+node中专门提供了一个核心模块：http
+这个模块的职责就是编写服务器
+
+`//1、创建对象
+var http=require('http')
+
+// 2、使用http.createServer()方法创建一个web服务器
+// 返回一个server实例
+var server = http.createServer()
+
+//3、注册request请求事件
+//当客户端的请求过来。就会自动触发服务器的request请求事件，然后执行第二个函数，回调处理函数
+// request请求事件处理函数，需要接收两个参数：
+// Request请求对象
+// 请求对象可以用来获取客户端的一些请求信息，例如请求路径
+// response响应对象
+// 响应对象可以用来给客户端发送相应消息
+server.on('request',function(request,response){
+    console.log('收到请求,请求路径是：' + request.url)
+// response对象有一个方法：write 可以用来给客户端发送响应数据
+// write 可以使用多次，但是最后一定要使用end来结束响应，否则客户端会一直等待
+response.write('hello')
+response.end()
+})
+
+// 4、绑定端口号，启动服务器
+ server.listen(234,function (request,response) {//端口号可以是1-65535的任意数字
+    console.log('服务器启动成功，可以通过http://127.0.0.1:234/来访问')//或者http://localhost:234/
+   })`
+   
+3、根据不同请求路径返回不同数据
+`var http = require("http");
+//步骤：
+// 1、创建Server实例
+// 2、监听request请求事件，设置请求处理函数
+// 3、绑定端口号，启动服务
+
+var server = http.createServer();
+
+server.on("request", function(req, res) {
+  console.log("收到请求,请求路径是：" + req.url);
+
+  //根据不同的请求路径发送不同的响应结果
+  //1、获取请求路径
+  //req.url获取到的是端口号之后的那一部分路径
+  //2、判断路径处理响应
+  var url = req.url;
+  if (url === "/") {
+    res.end("please reset")
+  } else if (url === "/index") {
+    res.end("welcome to the index");
+  } else {
+    res.end("404 not found");
+  }
+});`
+// 4、绑定端口号，启动服务器
+`server.listen(234, function(request, response) {
+  //端口号可以是1-65535的任意数字
+  console.log("服务器启动成功，可以通过http://127.0.0.1:234/来访问"); //或者http://localhost:234/
+});`
+
 ### 二、electron安装配置
 #### 安装
 在写好的node.js文件夹下安装electron
