@@ -21,7 +21,7 @@ ps：我自己安装electron的时候通过淘宝镜像安装的版本过低，�
 1.	项目初始化
 npm init
 2.	配置package.json
-{
+`{
   "name": "wrt",    # 模块名（随便取）
   “version”: (1.0.0) ，
   "description": "a simple application", （项目描述，可写可不写）
@@ -31,12 +31,12 @@ npm init
     "start": "electron ."
   },
   "author": "wrt",
-  "license": "ISC"
+  "license": "ISC" `
   
 3.	main.js用于创建窗口和处理系统事件。
 文件内容：
 
-    // 引用electron依赖
+  `  // 引用electron依赖
     const electron = require('electron')
     // Module to control application life.  创建应用实例
     const app = electron.app
@@ -104,7 +104,9 @@ npm init
      })
 
     // In this file you can include the rest of your app's specific main process
-    // code. You can also put them in separate files and require them here.
+    // code. You can also put them in separate files and require them here. `
+    
+
 
 4.	打包成exe文件
 npm install electron --save-dev安装electron。
@@ -114,8 +116,8 @@ npm install electron --save-dev安装electron。
 修改package.json。
 在"scripts"中加入"packager"配置：
 `"packager": "electron-packager ./ Myexe --platform=all --arch=x64 --electron-version=1.0.0 --out=../text --overwrite"`
-./表示当前路径
 
+./表示当前路径
 Myexe ：exe应用的名称
 platform: 打包平台 darwin, linux, mas, win32或者选择all
 arch: 可选 ia32, x64, armv7l, arm64或者选择all
