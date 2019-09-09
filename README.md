@@ -245,7 +245,8 @@ overwrite:使用了这个参数，每次打包就不用把原来exe删除，可�
 windows
 
 ## 功能描述
-点击index.html进入首页
+点击index.html、cost.html、price.html分别进入进入计算存储容量的需求、成本、价格页面，也可通过页面内点击相应内容进行页面切换，点击查看结果得出答案
+
 
 ## 源代码文件说明
 - css
@@ -255,9 +256,9 @@ windows
 - js
   + index.js
   + jquery.min.js
-- cost.html
-- index.html
-- price.html
+- cost.html 计算成本
+- index.html 计算存储容量的需求
+- price.html 计算价格
 - main.js
 - packade.json
 - package-lock.json
