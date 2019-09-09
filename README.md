@@ -1,7 +1,8 @@
 ## 开发工具，语言
 ### 一、node.js安装配置
 1、读写文件
-`//使用require方法加载核心fs核心模块
+
+```//使用require方法加载核心fs核心模块
 var fs=require('fs')
 
 //读取文件
@@ -34,13 +35,13 @@ fs.writeFile('./demo.js' ,'大家好',function(error){
     else{
         console.log(‘运行成功’) //运行成功在控制台打印显示成功
     }
-})`
+})```
 
 2、简单的http服务
 node中专门提供了一个核心模块：http
 这个模块的职责就是编写服务器
 
-`//1、创建对象
+```//1、创建对象
 var http=require('http')
 
 // 2、使用http.createServer()方法创建一个web服务器
