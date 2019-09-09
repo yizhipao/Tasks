@@ -1,0 +1,13 @@
+{
+  "name": "1705040228",
+  "version": "1.0.0",
+  "description": "exe-homework",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "packager": "electron-packager ./ Myexe --platform=all --arch=x64 --electron-version=1.0.0 --out=../1705040228 --overwrite"
+  },
+  "author": "",
+  "license": "ISC"
+}
