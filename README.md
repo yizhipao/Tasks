@@ -1,7 +1,8 @@
 ## 开发工具，语言
-1. node.js安装配置
-2. electron安装配置
-在你写好的node.js文件夹下安装electron
+### 一、node.js安装配置
+### 二、electron安装配置
+#### 安装
+在写好的node.js文件夹下安装electron
 官方文档：https://electronjs.org/docs/tutorial/installation
 通过命令行安装
 npm install electron --save-dev
@@ -14,7 +15,7 @@ ps：我自己安装electron的时候通过淘宝镜像安装的版本过低，�
  
 查看是否成功：
  
-使用
+#### 使用
 打开你要写node.js文件的那个文件夹
 通过命令行进入此文件夹
 1.	项目初始化
