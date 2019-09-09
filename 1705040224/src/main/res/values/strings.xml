@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HomeWork</string>
+    <string name="range">M=4080*e^(0.28*(Y-1960)) (单位：字数)</string>
+    <string name="price1">P1=0.3*0.72^(Y-1974) (美分/位)</string>
+    <string name="price2">P2=0.048*0.72^(Y-1974) (美元/字)</string>
+</resources>
