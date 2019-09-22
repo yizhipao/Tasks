@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="计算机容量及成本估计分析"
+        android:textColor="#F1D960"
+        android:background="#465CE6"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="计算机存储器容量需求随年份逐渐增加："/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/range"
+            android:textColor="#EFD346"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="存储器价格按如下趋势逐年下降："/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/price1"
+        android:textColor="#EFD346"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price2"
+            android:textColor="#EFD346"/>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(当计算机字长为16位时)"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请输入您要估计的年份："/>
+        <EditText
+            android:id="@+id/edt_year"
+            android:layout_marginLeft="5dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_range"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询容量"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="程序员一天可发出指令：（条）"/>
+        <EditText
+            android:id="@+id/edt_order"
+            android:layout_marginLeft="5dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_range"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="机器字长为："/>
+        <EditText
+            android:id="@+id/edt_length"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_price"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询价格"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="程序员月平均工资为："/>
+        <EditText
+            android:id="@+id/edt_salary"
+            android:layout_marginLeft="5dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_cost"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询成本"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_price"
+        android:paddingLeft="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_cost"
+        android:paddingLeft="400dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
