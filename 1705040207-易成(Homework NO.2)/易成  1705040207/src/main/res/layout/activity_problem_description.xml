@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_problem_description"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.a59124.thesolutionfromyicheng.ProblemDescription">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="    According to historical data, the following assumptions can be made (where Y represents year, M represents storage capacity, PA and PB represent price) :"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:id="@+id/text1"
+            android:layout_alignParentTop="true"
+            android:lineSpacingMultiplier="1.2"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="    1. The demand for computer storage capacity increases year by year according to the following formula:"
+            android:layout_weight="0.05" />
+
+        <ImageView
+            android:id="@+id/pic1"
+            android:paddingTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/img_1"
+            />
+
+        <TextView
+            android:id="@+id/text3"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="    2. The price of memory decreases year by year according to the following formula:"
+            android:layout_weight="0.05"
+            android:lineSpacingMultiplier="1.2"/>
+
+        <ImageView
+            android:id="@+id/pic2"
+            android:paddingTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/img_2"
+            />
+
+        <TextView
+            android:id="@+id/text4"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="    If the computer word length is 16 bits, the trend of memory price decline is:"
+            android:layout_weight="0.05"
+            android:lineSpacingMultiplier="1.2"/>
+
+        <ImageView
+            android:id="@+id/pic3"
+            android:paddingTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/img_3"
+            />
+
+        <TextView
+            android:id="@+id/text5"
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="    If you enter the year(Year), the number of digits of memory word length(Bits), the number of instructions programmers can develop per day(Number), and their average salary(Wage), this program can help you calculate the demand and price of computer storage capacity, and the cost of filling up the program with memory in a given year."
+            android:layout_weight="0.05"
+            android:lineSpacingMultiplier="1.2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="Year : "/>
+
+        <EditText
+            android:id="@+id/year"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:hint=""
+            android:selectAllOnFocus="false"
+            tools:background="?android:attr/actionModeBackground" />
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="51dp"
+            android:text="Bits : "/>
+
+        <EditText
+            android:id="@+id/bits"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:selectAllOnFocus="false"
+            tools:background="?android:attr/actionModeBackground" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="Number : "/>
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:hint=""
+            android:selectAllOnFocus="false"
+            tools:background="?android:attr/actionModeBackground" />
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Wage : "/>
+
+        <EditText
+            android:id="@+id/wage"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:selectAllOnFocus="false"
+            tools:background="?android:attr/actionModeBackground" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="50dp"
+            android:text="Calculate"
+            android:textAllCaps="false"
+            android:background="#00CD00"/>
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="70dp"
+            android:text="Clear All"
+            android:textAllCaps="false"
+            android:background="#CD2626"/>
+    </LinearLayout>
+</LinearLayout>
+
