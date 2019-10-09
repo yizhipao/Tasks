@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>扑克牌游戏</title>
+<script>
+var count=0,count1=0,count2=0,count3=0,count4=0,count5=
+0,count6=0;
+var interval=null;
+var inputVal;
+function fapai(){
+	var flag1,flag2;
+	var l1,l2,l3,l4,l5,l6;
+var types = ["红桃", "黑桃", "方块", "梅花"]; // 花色
+var points = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A"]; // 点数
+     function random(min, max) {
+       return parseInt((max - min) * Math.random());
+      }
+	//产生随机数  
+     var a1 = types[random(0, types.length - 1)];
+	 var b1 = points[random(0, points.length - 1)];
+	 var a2 = types[random(0, types.length - 1)];
+	 var b2 = points[random(0, points.length - 1)];
+	 var a3 = types[random(0, types.length - 1)];
+	 var b3 = points[random(0, points.length - 1)];
+	 var a4 = types[random(0, types.length - 1)];
+	 var b4 = points[random(0, points.length - 1)];
+	 var a5 = types[random(0, types.length - 1)];
+	 var b5 = points[random(0, points.length - 1)];
+	 var a6 = types[random(0, types.length - 1)];
+	 var b6 = points[random(0, points.length - 1)];
+	 
+     document.getElementById("fapai1").innerHTML=a1+b1;
+	 document.getElementById("fapai2").innerHTML=a2+b2;
+	 document.getElementById("fapai3").innerHTML=a3+b3;
+	 document.getElementById("fapai4").innerHTML=a4+b4;
+	 document.getElementById("fapai5").innerHTML=a5+b5;
+	 document.getElementById("fapai6").innerHTML=a6+b6;
+	 
+	 //等级1
+	 if((a1==a2)&&(a2==a3)){
+		 flag1=1;
+	 }
+	 if((a4==a5)&&(a5==a6)){
+		 flag2=1;
+	 }
+	 //等级2
+	 for(var i=0;i<points.length;i++)
+	 {
+		 if(b1==points[i])
+		 {
+			 l1=i;
+		 }
+		 if(b2==points[i]){
+			 l2=i;
+	     }
+	     if(b3==points[i])
+		 {
+			 l3=i;
+		 }
+		 if(b4==points[i]){
+			 l4=i;
+	     }
+		 if(b5==points[i])
+		 {
+			 l5=i;
+		 }
+		 if(b6==points[i]){
+			 l6=i;
+		 }
+	 }
+	 if(l1==l2-1){
+		 if(l1==l3-2)
+		 {
+			 flag1=2;
+		 }
+	 }
+	 if(l1==l3-1){
+		 if(l1==l2-2)
+		 {
+			 flag1=2;
+		 }
+	 }
+	 if(l2==l1-1){
+		 if(l2==l3-2)
+		 {
+			 flag1=2;
+		 }
+	 }
+	 if(l2==l3-1){
+		 if(l2==l2-2)
+		 {
+			 flag1=2;
+		 }
+	 }
+	 if(l3==l2-1){
+		 if(l3==l1-2)
+		 {
+			 flag1=2;
+		 }
+	 }
+	 if(l3==l1-1){
+		 if(l3==l2-2)
+		 {
+			 flag1=2;
+		 }
+	 } 
+	 
+	 
+	  if(l4==l5-1){
+		 if(l4==l6-2)
+		 {
+			 flag2=2;
+		 }
+	 }
+	 if(l4==l6-1){
+		 if(l4==l5-2)
+		 {
+			 flag2=2;
+		 }
+	 }
+	 if(l5==l4-1){
+		 if(l5==l6-2)
+		 {
+			 flag2=2;
+		 }
+	 }
+	 if(l5==l6-1){
+		 if(l5==l5-2)
+		 {
+			 flag2=2;
+		 }
+	 }
+	 if(l6==l5-1){
+		 if(l6==l4-2)
+		 {
+			 flag2=2;
+		 }
+	 }
+	 if(l6==l4-1){
+		 if(l6==l5-2)
+		 {
+			 flag2=2;
+		 }
+	 } 
+	//等级3
+	 if((b1==b2)&&(b2==b3)){
+		 flag1=3;
+	 }
+	 else{//等级4
+		 if((b1==b2)||(b1==b3)||(b2==b3))
+		 flag1=4;
+	 }
+	 //等级3
+	 if((b4==b5==b6)){
+		 flag2=3;
+	 }
+	 else{//等级4
+		 if((b4==b5)||(b5==b6)||(b4==b6))
+		 flag2=4;
+	 }
+	 //等级5
+     if(flag1!=1&&flag1!=2&&flag1!=3&&flag1!=4)
+	 flag1=5;
+	 if(flag2!=1&&flag2!=2&&flag2!=3&&flag2!=4)
+	 flag2=5;
+	 
+	 //定胜负
+	 if(flag1<flag2){
+		 document.getElementById("jieguo").innerHTML="A win!";
+		 if(flag1==1){ 
+	     document.getElementById("yingpaileixing").innerHTML="同花";
+		 count1++;
+		 }
+		 if(flag1==2){ 
+	     document.getElementById("yingpaileixing").innerHTML="顺子";
+		 count2++;
+		 }
+		 if(flag1==3){ 
+	     document.getElementById("yingpaileixing").innerHTML="同点";
+		 count3++;
+		 }
+		 if(flag1==4){ 
+	     document.getElementById("yingpaileixing").innerHTML="对子";
+		 count4++;
+		 }
+		 if(flag1==5){ 
+	     document.getElementById("yingpaileixing").innerHTML="杂牌";
+		 count5++;
+		 }
+	 }
+	 else if(flag1==flag2){
+	   var ai=l1+l2+l3;
+	   var bi=l4+l5+l6;
+	   if(ai>bi)
+	   {
+		document.getElementById("jieguo").innerHTML="A win!";
+		 if(flag1==1){ 
+	     document.getElementById("yingpaileixing").innerHTML="同花";
+		 count1++;
+		 }
+		 if(flag1==2){ 
+	     document.getElementById("yingpaileixing").innerHTML="顺子";
+		 count2++;
+		 }
+		 if(flag1==3){ 
+	     document.getElementById("yingpaileixing").innerHTML="同点";
+		 count3++;
+		 }
+		 if(flag1==4){ 
+	     document.getElementById("yingpaileixing").innerHTML="对子";
+		 count4++;
+		 }
+		 if(flag1==5){ 
+	     document.getElementById("yingpaileixing").innerHTML="杂牌";
+		 count5++;
+		 }
+	   }
+	   else if(ai==bi){
+	   document.getElementById("jieguo").innerHTML="平局!";
+	   count6++;
+	   }
+	   else if(ai<bi)
+	   document.getElementById("jieguo").innerHTML="B win!";
+	    if(flag2==1){ 
+	     document.getElementById("yingpaileixing").innerHTML="同花";
+		 count1++;
+		 }
+		 if(flag2==2){ 
+	     document.getElementById("yingpaileixing").innerHTML="顺子";
+		 count2++;
+		 }
+		 if(flag2==3){ 
+	     document.getElementById("yingpaileixing").innerHTML="同点";
+		 count3++;
+		 }
+		 if(flag2==4){ 
+	     document.getElementById("yingpaileixing").innerHTML="对子";
+		 count4++;
+		 }
+		 if(flag2==5){ 
+	     document.getElementById("yingpaileixing").innerHTML="杂牌";
+		 count5++;
+		 }
+	 }
+	 else if(flag1>flag2){
+	   document.getElementById("jieguo").innerHTML="B win!";
+	   if(flag2==1){ 
+	     document.getElementById("yingpaileixing").innerHTML="同花";
+		 count1++;
+		 }
+		 if(flag2==2){ 
+	     document.getElementById("yingpaileixing").innerHTML="顺子";
+		  count2++;
+		 }
+		 if(flag2==3){ 
+	     document.getElementById("yingpaileixing").innerHTML="同点";
+		  count3++;
+		 }
+		 if(flag2==4){ 
+	     document.getElementById("yingpaileixing").innerHTML="对子";
+		  count4++;
+		 }
+		 if(flag2==5){ 
+	     document.getElementById("yingpaileixing").innerHTML="杂牌";
+		  count5++;
+		 }
+	 }
+	count++;
+	if((count!=0)&&(count==inputVal)){
+		    document.getElementById("tonghua").innerHTML=count1/count;
+			document.getElementById("shunzi").innerHTML=count2/count;
+			document.getElementById("tongdian").innerHTML=count3/count;
+			document.getElementById("duizi").innerHTML=count4/count;  
+			document.getElementById("zapai").innerHTML=count5/count;
+			document.getElementById("pingju").innerHTML=count6/count;
+			clearInterval(interval);
+		    interval = null;
+			count=0;
+			count1=0;
+			count2=0;
+			count3=0;
+			count4=0;
+			count5=0;
+			count6=0;
+		}
+}
+function start(){//启动计时器函数
+        	if(interval!=null){//判断计时器是否为空
+        		clearInterval(interval);
+			    interval=null;
+		}
+			const inputBox = document.querySelectorAll('.input-box')[0];
+			// 获取input输入框中的值
+			inputVal = inputBox.value;
+			if(inputVal){
+			}else{
+				alert('请输入游戏次数');
+			}
+			if(inputVal!=0){
+ 		interval = setInterval(fapai,1);//启动计时器，调用fapai函数
+		}	
+	}
+</script>
+</head>
+
+<body style="background-image:url(5.jpg);">
+<div style="padding-top:80px;text-align:center;color:#FFF;">
+<h1>扑克牌游戏</h1>
+</div>
+<div style="text-align:center;color:#FFF;padding-top:20px;font-size:18px;">
+
+<span style="float:left;padding-left:300px">
+<div>
+<span>游戏次数:</span>
+<span><input type="text" class="input-box" /></span>
+</div>
+<div style="padding-top:22px;">
+<span>A:</span>
+<span id="fapai1"></span>
+<span id="fapai2"></span>
+<span id="fapai3"></span>
+</div>
+<div style="padding-top:22px;">
+<span>B:</span>
+<span id="fapai4"></span>
+<span id="fapai5"></span>
+<span id="fapai6"></span>
+</div>
+<div style="padding-top:22px;">
+<span>结果：</span>
+<span id="jieguo"></span>
+</div>
+<div style="padding-top:22px;">
+<span>赢牌类型：</span>
+<span id="yingpaileixing"></span>
+</div>
+</span>
+
+<span>
+<div>每种类型牌赢的概率:</div>
+<div style="padding-top:10px;">
+<span>同花:</span>
+<span id="tonghua"></span>
+</div>
+<div style="padding-top:10px;">
+<span>顺子:</span>
+<span id="shunzi"></span>
+</div>
+<div style="padding-top:10px;">
+<span>同点:</span>
+<span id="tongdian"></span>
+</div>
+<div style="padding-top:10px;">
+<span>对子:</span>
+<span id="duizi"></span>
+</div>
+<div style="padding-top:10px;">
+<span>杂牌:</span>
+<span id="zapai"></span>
+</div>
+<div style="padding-top:10px;">
+<span>平局:</span>
+<span id="pingju"></span>
+</div>
+
+</span>
+
+</div>
+<div style="padding-top:100px;text-align:center">
+<button onclick="start()">开始游戏</button>
+
+</div>
+
+</body>
+
+
+</html>
